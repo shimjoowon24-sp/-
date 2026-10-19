@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>과목노트 | 우리 학교 선택과목 정보</title>
+
+  <!-- 한글 웹폰트: Pretendard(본문), Noto Serif KR(제목) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css">
+
+  <style>
+    /* ===== 색상, 여백 등 사이트 전체에서 쓸 값들을 한 곳에 모아둠 ===== */
+    :root {
+      color-scheme: light;  /* 다시 밝은 테마로 전환 */
+      --bg: #EFE7D8;       /* 페이지 배경: 베이지 */
+      --surface: #FBF8F2;  /* 카드 배경: 아이보리 */
+      --ink: #2B2620;      /* 본문 글자색: 진한 브라운 계열 차콜 */
+      --muted: #8A8171;    /* 보조 설명 글자색: 톤 다운된 베이지 브라운 */
+      --teal: #3F5F55;     /* 제목/포인트 강조색: 차분한 딥그린 */
+      --amber: #C98A3E;    /* 버튼 색: 따뜻한 앰버 */
+      --line: #DDD3BE;     /* 구분선, 테두리색: 연한 베이지 */
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'PretendardVariable', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Noto Serif KR', Georgia, serif;
+      color: var(--teal);
+      margin: 0;
+    }
+
+    .wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .site-header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .logo {
+      font-family: 'Noto Serif KR', Georgia, serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--teal);
+    }
+
+    .hero {
+      padding: 56px 0 40px;
+    }
+    .hero h1 {
+      font-size: 30px;
+      line-height: 1.4;
+    }
+    .hero .lead {
+      margin-top: 16px;
+      max-width: 46ch;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .cta {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 14px 24px;
+      background: var(--amber);
+      color: #FFFFFF;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    .cta:focus-visible {
+      outline: 2px solid var(--teal);
+      outline-offset: 2px;
+    }
+
+    .picks {
+      padding: 32px 0 56px;
+      border-top: 1px solid var(--line);
+    }
+    .picks h2 {
+      font-size: 22px;
+    }
+    .section-note {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .pick-list {
+      list-style: none;
+      margin: 24px 0 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 600px) {
+      .pick-list { grid-template-columns: 1fr 1fr; }
+    }
+
+    .pick-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+    .pick-tag {
+      display: inline-block;
+      font-size: 12px;
+      color: var(--teal);
+      background: #E4EAE6;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .pick-card h3 {
+      margin-top: 10px;
+      font-size: 17px;
+    }
+    .pick-card p {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .site-footer {
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 상단 헤더: 서비스 이름만 간단히 -->
+  <header class="site-header">
+    <div class="wrap">
+      <span class="logo">과목노트</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- 히어로 영역: 첫 화면에서 가장 먼저 보이는 부분 -->
+    <section class="hero">
+      <div class="wrap">
+        <h1>선택과목, 후배가 알아야 할<br>진짜 이야기</h1>
+        <p class="lead">
+          같은 과목이라도 학교와 선생님에 따라 수업 방식과 평가가 다릅니다.
+          실제로 수강한 선배들의 후기를 먼저 확인하고 선택하세요.
+        </p>
+        <a class="cta" href="subjects.html">우리 학교 선택과목 보기</a>
+      </div>
+    </section>
+
+    <!-- 추천 과목 미리보기: 지금은 전부 샘플 데이터 -->
+    <section class="picks">
+      <div class="wrap">
+        <h2>요즘 많이 찾아보는 과목</h2>
+        <p class="section-note">
+          아래 4개는 화면 구성을 확인하기 위한 샘플입니다. 실제 과목 목록은 다음 단계에서 채워집니다.
+        </p>
+
+        <ul class="pick-list">
+          <li class="pick-card">
+            <span class="pick-tag">사회</span>
+            <h3>경제</h3>
+            <p>강의와 발표 중심 수업이며, 수행평가는 2회 진행됩니다.</p>
+          </li>
+          <li class="pick-card">
+            <span class="pick-tag">사회</span>
+            <h3>사회문화</h3>
+            <p>토론 비중이 높고, 개념 암기보다 사례 분석이 중요합니다.</p>
+          </li>
+          <li class="pick-card">
+            <span class="pick-tag">사회</span>
+            <h3>윤리와 사상</h3>
+            <p>사상가별 관점 정리가 핵심이며, 서술형 평가가 있습니다.</p>
+          </li>
+          <li class="pick-card">
+            <span class="pick-tag">정보</span>
+            <h3>데이터 과학</h3>
+            <p>실습 과제 비중이 크고, 발표와 프로젝트가 포함됩니다.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>이 사이트는 학교 프로젝트로 만들어지고 있습니다.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

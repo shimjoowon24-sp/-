@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>경제 | 과목노트</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css">
+
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #EFE7D8;
+      --surface: #FBF8F2;
+      --ink: #2B2620;
+      --muted: #8A8171;
+      --teal: #3F5F55;
+      --amber: #C98A3E;
+      --line: #DDD3BE;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'PretendardVariable', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Noto Serif KR', Georgia, serif;
+      color: var(--teal);
+      margin: 0;
+    }
+
+    .wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .site-header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { font-family: 'Noto Serif KR', Georgia, serif; font-weight: 700; font-size: 20px; color: var(--teal); text-decoration: none; }
+    .back-link { font-size: 14px; color: var(--muted); text-decoration: none; }
+
+    .subject-head { padding: 28px 0 4px; }
+    .subject-tag {
+      display: inline-block;
+      font-size: 12px;
+      color: var(--teal);
+      background: #E4EAE6;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .subject-head h1 { margin-top: 10px; font-size: 28px; }
+
+    section.block {
+      padding: 24px 0;
+      border-top: 1px solid var(--line);
+    }
+    section.block h2 { font-size: 18px; }
+    .sample-note {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* 한눈에 보기: 2열 표 형태 */
+    .glance {
+      margin-top: 16px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 4px 18px;
+    }
+    .glance dl {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      margin: 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .glance dl:last-child { border-bottom: none; }
+    .glance dt { color: var(--muted); font-size: 14px; }
+    .glance dd { margin: 0; font-weight: 600; font-size: 14px; }
+
+    /* 추천 대상 */
+    .recommend-list {
+      margin: 16px 0 0;
+      padding-left: 20px;
+    }
+    .recommend-list li { margin-bottom: 6px; font-size: 15px; }
+
+    /* 난이도 별점 바 */
+    .rating-rows { margin-top: 16px; display: flex; flex-direction: column; gap: 12px; }
+    .rating-row { display: flex; align-items: center; justify-content: space-between; }
+    .rating-row .label { font-size: 14px; color: var(--muted); }
+    .stars { color: var(--amber); font-size: 16px; letter-spacing: 1px; }
+    .stars .empty { color: var(--line); }
+
+    /* 후기 카드 */
+    .review-list { margin: 16px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .review-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px 18px;
+    }
+    .review-meta { display: flex; justify-content: space-between; align-items: center; }
+    .review-meta .stars { font-size: 15px; }
+    .review-meta .who { font-size: 13px; color: var(--muted); }
+    .review-summary { margin-top: 8px; font-weight: 600; font-size: 15px; }
+    .review-detail { margin-top: 6px; font-size: 14px; color: var(--muted); }
+
+    .site-footer { padding: 24px 0 40px; color: var(--muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap" style="display:flex; align-items:center; justify-content:space-between;">
+      <a class="logo" href="index.html">과목노트</a>
+      <a class="back-link" href="subjects.html">← 과목 목록</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+
+      <div class="subject-head">
+        <span class="subject-tag">사회</span>
+        <h1>경제</h1>
+      </div>
+
+      <!-- 한눈에 보기 -->
+      <section class="block">
+        <h2>한눈에 보기</h2>
+        <p class="sample-note">아래 수치는 화면 구성을 확인하기 위한 샘플입니다.</p>
+        <div class="glance">
+          <dl><dt>수강 인원</dt><dd>24명</dd></dl>
+          <dl><dt>수업 방식</dt><dd>강의 + 발표</dd></dl>
+          <dl><dt>수행평가</dt><dd>2회</dd></dl>
+          <dl><dt>시험</dt><dd>지필평가</dd></dl>
+        </div>
+      </section>
+
+      <!-- 추천 대상 -->
+      <section class="block">
+        <h2>이런 학생에게 추천</h2>
+        <ul class="recommend-list">
+          <li>경제·경영에 관심 있는 학생</li>
+          <li>사회 현상을 분석하는 것을 좋아하는 학생</li>
+        </ul>
+      </section>
+
+      <!-- 공부 난이도 -->
+      <section class="block">
+        <h2>공부 난이도</h2>
+        <div class="rating-rows">
+          <div class="rating-row">
+            <span class="label">난이도</span>
+            <span class="stars">★★★<span class="empty">☆☆</span></span>
+          </div>
+          <div class="rating-row">
+            <span class="label">암기량</span>
+            <span class="stars">★★<span class="empty">☆☆☆</span></span>
+          </div>
+          <div class="rating-row">
+            <span class="label">수행평가 부담</span>
+            <span class="stars">★★★★<span class="empty">☆</span></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 선배 후기 -->
+      <section class="block">
+        <h2>선배 후기</h2>
+        <p class="sample-note">아래 후기 3개는 UI 테스트용 샘플입니다. 실제 후기 데이터가 아닙니다.</p>
+        <ul class="review-list">
+          <li class="review-card">
+            <div class="review-meta">
+              <span class="stars">★★★★<span class="empty">☆</span></span>
+              <span class="who">2학년 · 2025년 수강</span>
+            </div>
+            <p class="review-summary">"수업은 재미있지만 수행평가 준비가 생각보다 많았다."</p>
+            <p class="review-detail">수업 후기: 발표와 토론이 자주 있었다.</p>
+            <p class="review-detail">공부법: 수업 자료를 시험 전에 여러 번 정리했다.</p>
+          </li>
+          <li class="review-card">
+            <div class="review-meta">
+              <span class="stars">★★★<span class="empty">☆☆</span></span>
+              <span class="who">3학년 · 2024년 수강</span>
+            </div>
+            <p class="review-summary">"발표 준비가 많지만 팀원들과 협업하는 재미가 있다."</p>
+            <p class="review-detail">시험 후기: 개념 위주 서술형 문제가 나왔다.</p>
+          </li>
+          <li class="review-card">
+            <div class="review-meta">
+              <span class="stars">★★★★★</span>
+              <span class="who">2학년 · 2025년 수강</span>
+            </div>
+            <p class="review-summary">"경제 개념을 실생활 사례로 설명해줘서 이해가 잘 됐다."</p>
+            <p class="review-detail">추천 대상: 뉴스나 시사 이슈에 관심 있는 학생</p>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>이 사이트는 학교 프로젝트로 만들어지고 있습니다.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
